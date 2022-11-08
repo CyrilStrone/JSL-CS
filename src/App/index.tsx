@@ -1,16 +1,25 @@
+import { UA } from "Pages/Content";
 import { Home } from "Pages/Home/Ogranoids/Home";
 import React from "react";
 import { useRoutes } from "react-router-dom";
 import "../Common/Styles/reset.css";
 
 const App: React.FC = (): JSX.Element => {
-  const GeneralRoutes = {
-    path: "/",
+  const mainRoutes = {
+    path: '/',
     element: <Home />,
+    
   };
-  const routing = useRoutes([GeneralRoutes]);
+
+  const accountRoutes = {
+    path: 'account',
+    element: <UA />,
+  };
+
+  const routing = useRoutes([mainRoutes, accountRoutes]);
 
   return <>{routing}</>;
+ 
 };
 
 export default App;
