@@ -1,11 +1,39 @@
 .Home{
-    background-color: rgb(192, 73, 73);
-    width: 70%;
+    /* background-color: rgb(192, 73, 73); */
+    width: 100%;
     height: 100%;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Home-Header{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+.Home-Header__Search-Panel{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.Home-Header__TaskList__Items{
+position: absolute;
+left: 0;
+display: grid;
+    width: 100%;
+    justify-content: start;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.Home-Header__TaskList__Item{
+    display: inline-block;
 }
 @media (orientation: portrait) {
     .Home{
-        background-color: rgb(192, 73, 73);
+        /* background-color: rgb(192, 73, 73); */
         width: 100%;
         height: 100%;
     }

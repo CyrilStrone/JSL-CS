@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
-interface ISearchBlock {
-  setSearchGlob: React.Dispatch<React.SetStateAction<any>>;
-}
-export const SearchBlock = (params: ISearchBlock) => {
-  const [search, setSearch] = useState("");
+import React from "react";
+import { useStore } from "effector-react";
+import { $searchGlob, setsearchGlob } from "../Hooks";
 
-  useEffect(() => {
-    params.setSearchGlob(search);
-  }, [search]);
+
+
+export const SearchBlock = () => {
+  const searchGlob = useStore($searchGlob);
 
   return (
     <div className="Home__Search-Panel__Search-Block">
       <input
-        value={search}
+        value={searchGlob}
         type="text"
         className="Home__Search-Panel__Search-Block__Input"
         placeholder="Search"
-        onChange={(e) => setSearch(e.currentTarget.value)}
+        onChange={(e) => {setsearchGlob(e.currentTarget.value)}}
       />
     </div>
   );

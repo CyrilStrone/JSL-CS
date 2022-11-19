@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { SearchBlock } from "../Atoms/SearchBlock";
+import {   setresetList } from "../Hooks";
 import "../Styles/SearchSettingsPanel.css";
+import { $resetList } from "../Hooks";
+import { useStore } from "effector-react";
 
 export const SearchSettingsPanel = () => {
-  const [searchGlob, setSearchGlob] = useState("");
-
-  useEffect(() => {
-    console.log("searchGlob", searchGlob);
-  }, [searchGlob]);
+  const resetList = useStore($resetList);
 
   return (
-    <div className="Home__Search-Panel">
-      <SearchBlock setSearchGlob={setSearchGlob} />
-      <button  value="success">
-        
-      </button>
-      <button  value="error">
-      </button>
+    <div className="Home-Header__Search-Panel">
+      <SearchBlock />
+      <button value="success">Поиск</button>
+      <button value="error" onClick={()=>{setresetList(!resetList);}}>Отмена</button>
     </div>
   );
 };
