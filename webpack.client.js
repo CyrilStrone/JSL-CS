@@ -37,6 +37,7 @@ module.exports = (env, argv) => {
       },
       port: 4000,
       hot: "only",
+      historyApiFallback: true,
     },
     resolve: config.resolve,
     module: {
