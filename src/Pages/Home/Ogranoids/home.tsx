@@ -14,6 +14,7 @@ import {
   setresetList,
   setsearchGlob,
 } from "../Hooks";
+import { Content } from "./Content";
 let checkNumner = 0;
 
 export const Home = () => {
@@ -51,6 +52,7 @@ useEffect(()=>{
         <SearchSettingsPanel />
         <TaskList />
       </div>
+      <Content/>
     </div>
   );
 };

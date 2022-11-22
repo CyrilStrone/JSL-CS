@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import {  TaskListItem } from "../Atoms/TaskListItem";
 import { useStore } from "effector-react";
 import { $itemsListArrayAll } from "../../../Common/GeneralHooks";
+import "../Styles/TaskList.css";
 
 export const TaskList = () => {
   const itemsListArrayAll = useStore($itemsListArrayAll);
@@ -19,7 +20,7 @@ export const TaskList = () => {
   };
   return (
     <div className="Home-Header__TaskList">
-      <button onClick={onTaskListClick}>Категории</button>
+      <button  className="Home-Header__TaskList__Button" onClick={onTaskListClick}>Категории</button>
       <div
         className="Home-Header__TaskList__Items"
         style={TaskListShow ? { display: "none" } : {}}
