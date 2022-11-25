@@ -1,4 +1,3 @@
-import { UA } from "Pages/Content";
 import { Home } from "Pages/Home/Ogranoids/Home";
 import React from "react";
 import { useRoutes } from "react-router-dom";
@@ -8,15 +7,14 @@ const App: React.FC = (): JSX.Element => {
   const mainRoutes = {
     path: '/',
     element: <Home />,
-    
   };
 
-  const accountRoutes = {
-    path: 'account',
-    element: <UA />,
-  };
+  // const accountRoutes = {
+  //   path: 'account',
+  //   element: <UA />,
+  // };
 
-  const routing = useRoutes([mainRoutes, accountRoutes]);
+  const routing = useRoutes([mainRoutes]);
 
   return <>{routing}</>;
  

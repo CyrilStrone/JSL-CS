@@ -1,6 +1,6 @@
 .Home{
     /* background-color: rgb(192, 73, 73); */
-    width: 100%;
+    width: 800px;
     height: 100%;
     display: flex;
     display: flex;
@@ -14,7 +14,7 @@
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
-    width: 800px;
+    width: 100%;
 }
 .Home-Header__Search-Panel{
     display: flex;

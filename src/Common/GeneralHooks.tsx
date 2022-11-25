@@ -1,4 +1,6 @@
 import { createEvent, createStore } from "effector";
+import { Task_1_1 } from "Pages/ContentBlockGeneral/Ogranoids/1_1";
+import React from "react";
 //Список категорий
 export interface IitemsListArrayAll_Item {
   Id?: string;
@@ -26,3 +28,9 @@ export const $itemsListArrayAll = createStore<IitemsListArrayAll_Items>({
 });
 export const setitemsListArrayAll = createEvent<IitemsListArrayAll_Items>();
 $itemsListArrayAll.on(setitemsListArrayAll, (_, val) => val);
+
+export const $TaskLIst = createStore<any>([
+  { shortName: "Привет, мир!", category: "Основы JavaScript", id: "1_1" ,Component:<Task_1_1 />},
+]);
+export const setTaskLIst = createEvent<IitemsListArrayAll_Items>();
+$TaskLIst.on(setTaskLIst, (_, val) => val);
