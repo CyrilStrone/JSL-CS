@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Styles/ContentBlockPreview.css";
 
 export interface IContentBlockPreview {
@@ -6,16 +6,17 @@ export interface IContentBlockPreview {
   shortName?: string;
   category?: string;
   Component?:JSX.Element;
-  icheck?:boolean;
 }
 export const ContentBlockPreview = (params: IContentBlockPreview) => {
   const [check,setcheck] = useState(false);
-  useEffect(()=>{
-    setcheck(false)
-  },[params.icheck])
+  const rootEl = useRef(null);
+  useEffect(() => {
+    const onClick = (e: { target: any; }) => rootEl.current.contains(e.target) || setcheck(false);
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
   return (
-    <>
-    <div className="Home-Content__Block-Preview" onClick={()=>setcheck(true)}>
+    <div ref={rootEl} className="Home-Content__Block-Preview" onClick={()=>setcheck(true)}>
       <div className="Home-Content__Block-Preview__shortName">
         {params.shortName}
       </div>
@@ -27,8 +28,7 @@ export const ContentBlockPreview = (params: IContentBlockPreview) => {
         {params.category}
       </div>
       </div>
+      {check ? params.Component:null}
     </div>
-    {check ? params.Component:null}
-    </>
   );
 };

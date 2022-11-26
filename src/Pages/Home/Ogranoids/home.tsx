@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { SearchSettingsPanel } from "../Molecules/SearchSettingsPanel";
 import { TaskList } from "../Molecules/TaskList";
 import { useStore } from "effector-react";
@@ -18,8 +18,6 @@ import { Content } from "./Content";
 let checkNumner = 0;
 
 export const Home = () => {
-  const [check, setcheck] = useState(false);
-  useEffect(()=>{console.log(check)},[check])
   const GlobalSearchList = useStore($GlobalSearchList);
   const itemsListArray = useStore($itemsListArray);
   const searchGlob = useStore($searchGlob);
@@ -49,12 +47,12 @@ export const Home = () => {
   }, [GlobalSearchList]);
 
   return (
-    <div className="Home" onClick={() => setcheck(false)}>
+    <div className="Home" >
       <div className="Home-Header">
         <SearchSettingsPanel />
         <TaskList />
       </div>
-      <Content icheck={check}  />
+      <Content />
     </div>
   );
 };

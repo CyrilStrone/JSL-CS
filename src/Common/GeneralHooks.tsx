@@ -31,6 +31,7 @@ $itemsListArrayAll.on(setitemsListArrayAll, (_, val) => val);
 
 export const $TaskLIst = createStore<any>([
   { shortName: "Привет, мир!", category: "Основы JavaScript", id: "1_1" ,Component:<Task_1_1 />},
+  { shortName: "Привет, мир 2!", category: "Основы JavaScript", id: "1_1" ,Component:<Task_1_1 />},
 ]);
 export const setTaskLIst = createEvent<IitemsListArrayAll_Items>();
 $TaskLIst.on(setTaskLIst, (_, val) => val);
